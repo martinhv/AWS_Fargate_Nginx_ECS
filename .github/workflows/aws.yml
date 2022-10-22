@@ -9,7 +9,7 @@ env:
   ECR_REPOSITORY: sai-yalamaddi
   ECS_SERVICE: planA-service
   ECS_CLUSTER: planA-cluster
-  ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION: .aws/planA-task.json
+  ECS_TASK_DEFINITION: .aws/planA-task.json
   CONTAINER_NAME: planA
 
 permissions:

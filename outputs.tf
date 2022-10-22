@@ -1,4 +1,3 @@
-
 # outputs.tf
 
 output "alb_hostname" {

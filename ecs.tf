@@ -1,11 +1,11 @@
 # ecs.tf
 
 resource "aws_ecs_cluster" "main" {
-  name = "myapp-cluster"
+  name = "planA-cluster"
 }
 
-data "template_file" "myapp" {
-  template = file("./templates/ecs/myapp.json.tpl")
+data "template_file" "planA" {
+  template = file("./templates/ecs/planA.json.tpl")
 
   vars = {
     app_image      = var.app_image
@@ -17,17 +17,17 @@ data "template_file" "myapp" {
 }
 
 resource "aws_ecs_task_definition" "app" {
-  family                   = "myapp-task"
+  family                   = "planA-task"
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = var.fargate_cpu
   memory                   = var.fargate_memory
-  container_definitions    = data.template_file.myapp.rendered
+  container_definitions    = data.template_file.planA.rendered
 }
 
 resource "aws_ecs_service" "main" {
-  name            = "myapp-service"
+  name            = "planA-service"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.app.arn
   desired_count   = var.app_count
@@ -41,7 +41,7 @@ resource "aws_ecs_service" "main" {
 
   load_balancer {
     target_group_arn = aws_alb_target_group.app.id
-    container_name   = "myapp"
+    container_name   = "planA"
     container_port   = var.app_port
   }
 

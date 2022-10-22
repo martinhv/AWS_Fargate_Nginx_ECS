@@ -1,6 +1,6 @@
 [
   {
-    "name": "myapp",
+    "name": "planA",
     "image": "${app_image}",
     "cpu": ${fargate_cpu},
     "memory": ${fargate_memory},
@@ -8,7 +8,7 @@
     "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/myapp",
+          "awslogs-group": "/ecs/planA",
           "awslogs-region": "${aws_region}",
           "awslogs-stream-prefix": "ecs"
         }

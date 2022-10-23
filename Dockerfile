@@ -1,3 +1,3 @@
-FROM php:7.0-apache
+FROM nginx
 COPY src/ /var/www/html
 EXPOSE 80

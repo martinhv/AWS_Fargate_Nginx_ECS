@@ -10,7 +10,7 @@ env:
   ECS_SERVICE: planA-service
   ECS_CLUSTER: planA-cluster
   ECS_TASK_DEFINITION: task-definiton.json
-  CONTAINER_NAME: planAtion
+  CONTAINER_NAME: planA
 
 permissions:
   contents: read

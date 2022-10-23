@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 env:
-  AWS_REGION: us_east_1
+  AWS_REGION: us-east-1
   ECR_REPOSITORY: sai-yalamaddi
   ECS_SERVICE: planA-service
   ECS_CLUSTER: planA-cluster

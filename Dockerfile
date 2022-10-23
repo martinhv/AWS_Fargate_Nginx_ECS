@@ -1,3 +1,3 @@
 FROM nginx
-COPY src/ /var/www/html
+COPY src/ /usr/share/nginx/html
 EXPOSE 80

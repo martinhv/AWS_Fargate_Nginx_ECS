@@ -19,6 +19,15 @@ resource "aws_security_group" "lb" {
     to_port     = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+ ingress {
+    cidr_blocks = ["0.0.0.0/0"]
+    from_port   = "443"
+    protocol    = "tcp"
+    self        = "false"
+    to_port     = "443"
+  }
+
 }
 
 # Traffic to the ECS cluster should only come from the ALB

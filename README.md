@@ -1,5 +1,5 @@
 # AWS_Fargate_Nginx_ECS Deployment steps
-Blue/Green Deployment steps:
+#Blue/Green Deployment steps#
 1.	Modify the index.html and commit the changes
 2.	Push the changes to the main branch
 3.	In the Actions tab on the left side we can see Deploy to Amazon ECS click on that
